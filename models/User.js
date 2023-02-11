@@ -47,6 +47,10 @@ User.init(
         key: 'id',
       },
     },
+    is_employer: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    }
   },
   {
     hooks: {
