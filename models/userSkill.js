@@ -32,7 +32,8 @@ UserSkill.init(
             allowNull: false,
             validate: {
                 isNumeric: true,
-                len: [1, 10],
+                min: 1,
+                max: 10,
             },
         },
         comment: {
