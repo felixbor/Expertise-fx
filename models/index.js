@@ -21,4 +21,4 @@ Role.hasMany(Skill, {
   foreignKey: 'role_id',
 });
 
-module.exports = { User, Project };
+module.exports = { User, Role, Skill, UserSkill };

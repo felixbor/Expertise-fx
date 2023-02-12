@@ -19,7 +19,7 @@ Skill.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'roll',
+                model: 'role',
                 key: 'id',
             },
         },
