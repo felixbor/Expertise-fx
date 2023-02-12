@@ -1,17 +1,42 @@
 [
   {
-    "name": "Sal",
+    "first_name": "Sal",
+    "last_name": "Salamon",
     "email": "sal@hotmail.com",
-    "password": "password12345"
+    "password": "password12345",
+    "role_id": 1,
+    "is_employer": false
   },
   {
-    "name": "Lernantino",
-    "email": "lernantino@gmail.com",
-    "password": "password12345"
+    "first_name": "Sam",
+    "last_name": "Snake",
+    "email": "ssnake@hotmail.com",
+    "password": "password1234",
+    "role_id": 1,
+    "is_employer": false
   },
   {
-    "name": "Amiko",
-    "email": "amiko2k20@aol.com",
-    "password": "password12345"
+    "first_name": "Salizar",
+    "last_name": "Slytherin",
+    "email": "sslytheryn@hotmail.com",
+    "password": "password123",
+    "role_id": 1,
+    "is_employer": false
+  },
+  {
+    "first_name": "Char",
+    "last_name": "Gray",
+    "email": "Cgray@hotmail.com",
+    "password": "password12",
+    "role_id": 1,
+    "is_employer": false
+  },
+  {
+    "first_name": "Joe",
+    "last_name": "Bloggins",
+    "email": "blogman@hotmail.com",
+    "password": "password1",
+    "role_id": 1,
+    "is_employer": false
   }
 ]

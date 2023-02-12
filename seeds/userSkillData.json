@@ -1,0 +1,44 @@
+[
+    {
+        "user_id": 1,
+        "skill_id": 3,
+        "level": 8,
+        "comment": "I am a pro at this"
+    },
+    {
+        "user_id": 1,
+        "skill_id": 1,
+        "level": 5,
+        "comment": "I am a pro at this"
+    },
+    {
+        "user_id": 2,
+        "skill_id": 6,
+        "level": 9,
+        "comment": "I am a pro at this"
+    },
+    {
+        "user_id": 2,
+        "skill_id": 18,
+        "level": 5,
+        "comment": "I am a pro at this"
+    },
+    {
+        "user_id": 2,
+        "skill_id": 12,
+        "level": 10,
+        "comment": "I am a pro at this"
+    },
+    {
+        "user_id": 2,
+        "skill_id": 15,
+        "level": 6,
+        "comment": "I am a pro at this"
+    },
+    {
+        "user_id": 2,
+        "skill_id": 9,
+        "level": 3,
+        "comment": "I am a pro at this"
+    }
+]
