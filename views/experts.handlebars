@@ -1,0 +1,41 @@
+</nav>
+    <div class="search-box">
+        <form id="form">
+            <label id="label"> Select candidate skill </label>
+           <div class="search">
+            <div class="project">
+                <select class="selectproject" >
+                    <option placeholder="select"></option>
+                    <option value="Project 1">css</option>
+                    <option value="Project 2">JAVA 1</option>
+                    <option value="Project 3">JAVA SCRIPT 1</option>
+                    <option value="Project 1">SQL 1</option>
+                    <option value="Project 1">FULL STACK</option>
+                    <option value="Project 1">HTML</option>
+                    <option value="Project 1">PYTHON</option>
+                    <option value="Project 1">RUBI 1</option>
+                    <option value="Project 1">Project 1</option>
+                    <option value="Project 1">Project 1</option>
+                </select>
+            </div>
+            <button class="search" type="submit">
+                Search
+            </button>
+        </div>
+        </form>
+      </div>
+     <div class=container>
+ {{#each expertss as |expert|}}
+    
+     
+        <div class=card>
+            <h2>{{expert.name}} level {{expert.skill.level}}/10</h2>
+            <ul>
+                <li>skill +  level</li>
+                
+            </ul>
+        </div>
+
+   
+{{/each}}   
+     </div>
