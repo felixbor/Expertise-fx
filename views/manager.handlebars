@@ -1,14 +1,45 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{{get_emoji}}}</p>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <span for="img" aria-label="money">💲</span>
-    <span class="dollar-amount">{{format_amount needed_funding}}</span>
-    needed
-  </p>
-  <p>
-    <button class="btn btn-primary">Fund this Project!</button>
-  </p>
-</div>
+
+  <div class="search-box">
+    <form id="form">
+      <label id="label"> Select a field of expretise you need employee for </label>
+      <div class="search">
+        <div class="project">
+          <select class="selectproject">
+            <option placeholder="-------"></option>
+            <option value="Project 1">Project 1</option>
+            <option value="Project 2">Project 1</option>
+            <option value="Project 3">Project 1</option>
+            <option value="Project 1">Project 1</option>
+            <option value="Project 1">Project 1</option>
+            <option value="Project 1">Project 1</option>
+            <option value="Project 1">Project 1</option>
+            <option value="Project 1">Project 1</option>
+            <option value="Project 1">Project 1</option>
+            <option value="Project 1">Project 1</option>
+          </select>
+        </div>
+        <button class="search" type="submit">
+          Search
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class=container>
+    
+    {{#each experts as |expert|}}
+  
+        <div class=card>
+            <h2>{{expert.name}} level {{expert.skill.level}}/10</h2>
+            
+              {{#each experts.name.skill as |expert|}}
+              <ul>
+                <li>{{expert.skill}} level {{.skill.level}}/10</li>
+            </ul>
+             {{/each}} 
+        </div>
+     {{/each}} 
+   
+
+  </div>
+
+</html>
