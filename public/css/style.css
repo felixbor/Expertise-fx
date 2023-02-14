@@ -1,6 +1,4 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
+
 
 .no-button {
   background: none;
@@ -13,12 +11,203 @@ header, .project:not(:last-child) {
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: #112a35;
   text-decoration: underline;
+  background-color: #1b89bc;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixid=Mnw0MDkzODR8MHwxfHNlYXJjaHw0fHx0ZWNobm9sb2d5fGVufDB8fHx8MTY3NjE1MzIzMw&ixlib=rb-4.0.3');
+  background-size: 120%;
+  height: auto;
+}
+header {
+  display: inline;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+header img {
+  width: 20%;
+  height: auto;
+
+}
+
+header p {
+  color: aliceblue;
+  padding-right: 35%;
+  font-size: 3em;
+
+
+}
+nav {
+  color: aliceblue;
+  border-bottom: 2px solid white;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+nav a {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 2rem;
+  margin-left: 5%;
+  padding-top: 1%;
+}
+
+.container {
+  margin: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 250px;
+}
+
+
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+ 
+
+
+}
+.login-signup{
+  color: rgb(10, 10, 10);
+ background-color: #92b7c9;
+opacity: 0.8;
+margin-bottom: 12%;
+padding-right: 10px;
+padding-left: 10px;
+}
+.form-group{
+  
+  display: flex;
+  flex-direction: column;
+  color: rgb(38, 37, 37);
+  padding: 10px;
+  padding-right: 10px;
+  
+}
+
+
+#chart{
+  width: 35%;
+    height: auto
+    
+
+}
+#label {
+  color: aliceblue;
+  font-size: 2em;
+  padding-bottom: 20px;
+}
+
+
+.selectproject {
+  width: 300px;
+  height: 35px;
+  color: black;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+
+}
+.profile{
+ background-color: aliceblue;
+opacity: 0.75;
+margin: 10%;
+margin-left: 30%;
+max-width: 50%;
+   
+}
+
+
+
+.card {
+  backdrop-filter: invert(15%);
+
+  margin: 20px;
+  width: 300px;
+  height: auto;
+
+  color: rgb(243, 247, 247);
+  border-radius: 5px;
+  border: 3px solid rgb(80, 79, 79);
+}
+
+.card h2 {
+  text-align: center;
+
+}
+
+.card li {
+  padding-top: 20px;
+  padding-right: 10px
+}
+
+a:hover {
+  color: rgb(193, 9, 239);
+  text-shadow: 5px 0px 50px rgb(247, 247, 251);
+}
+
+.row {
+  padding-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+ 
+
+}
+
+.login-logout {
+  color: rgb(11, 12, 12);
+  
+  background-color: aliceblue;
+ 
+
+
+}
+#im2, #im3  {
+opacity: 0.12;
+}
+.intro{
+  font-size: 25px;
+  text-align: center;
+  font-size: 2em;
+  padding-top: 2%;
+  color: aliceblue;
+  
+}
+
+.introimg {
+  display: flex;
+  justify-content: space-between;
+  size:70%;
+  margin-bottom: 5%;
+}
+.search {
+  color: black;
+}
+.btn {
+  color: black;
+  background-color: rgb(216, 201, 214);
+  border-radius: 3px;
+}
+footer{
+  color: aliceblue;
+  text-align: center;
+  
+}
+footer a{
+  color: aliceblue;
+  text-decoration: underline;
+  text-align: justify;
+  margin: 20px;
 }
