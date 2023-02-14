@@ -15,11 +15,11 @@ Skill.init(
             type: DataTypes.STRING,
             allowNull: true,
         },
-        skill_id: {
+        role_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
-                model: 'role',
+                model: 'Role',
                 key: 'id',
             },
         },
@@ -29,7 +29,7 @@ Skill.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'skill',
+        modelName: 'Skill',
     }
 );
 

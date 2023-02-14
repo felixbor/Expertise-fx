@@ -11,7 +11,7 @@ Role.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    role_title: {
+    role_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -21,7 +21,7 @@ Role.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'role',
+    modelName: 'Role',
   }
 );
 
