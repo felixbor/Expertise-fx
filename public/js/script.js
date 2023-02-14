@@ -13,7 +13,8 @@ function fetchImage() {
   }
   fetchImage()
   function  displayImage(data){
- document.getElementById("im3").src=data.results[0].urls.small
+ 
+    document.getElementById("im3").src=data.results[0].urls.small
 document.getElementById("im2").src=data.results[2].urls.small
   }
-  const name = document.querySelector('#project-name').value.trim();
+//  const name = document.querySelector('#project-name').value.trim();

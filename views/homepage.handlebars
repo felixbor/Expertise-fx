@@ -1,0 +1,41 @@
+ <div class="introimg"><img src="" alt="image" id="im3">
+        <div class="intro">  
+            <p> If you are looking for coding professionals you are in the right place.<br> Our mission is to help
+                project
+                managers to find their team, <br>experts in a certain field. 
+                <a href="/api/candidates">Explore our website</a> and find perfect fit. </p>
+        </div>
+
+        <img src="" alt="image" id="im2">
+    </div>
+     </div>
+    <div id="chart">
+      <canvas id="myChart"> chart</canvas>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Front End', 'Back End', 'FullStack', ],
+      datasets: [{
+          label: 'Destribution  of experts in our Database',
+        data: [12, 25, 3, ],
+      
+        borderWidth: 1
+
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+    </div>
+     <script src="./js/script.js"></script>
