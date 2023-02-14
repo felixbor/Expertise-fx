@@ -28,13 +28,9 @@ UserSkill.init(
             },
         },
         level: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                isNumeric: true,
-                min: 1,
-                max: 10,
-            },
+            
         },
         comment: {
             type: DataTypes.STRING,

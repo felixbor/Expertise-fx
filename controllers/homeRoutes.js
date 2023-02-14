@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     // Get all the required data to be displayed in the home page
 
     // Pass serialized data and session flag into template
-    res.render('homepage', {       
+    res.render('home', {       
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -19,21 +19,26 @@ router.get('/', async (req, res) => {
 
 
 // Use withAuth middleware to prevent access to route
-router.get('/mySkills', withAuth, async (req, res) => {
+router.get('/profile',  async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
+    // Find the logged in user based on the session ID req.session.user_id
+    const userData = await User.findByPk(1, {
+      include: [{model:Role }],
+      
       attributes: { exclude: ['password'] },
-      include: [{ model: UserSkill }],
+      include: [{ model: Skill, through: UserSkill }],
     });
 
     const user = userData.get({ plain: true });
-
-    res.render('mySkills', {
-      ...user,
-      logged_in: true
-    });
+console.log("inside profile");
+console.log(user);
+ res.status(200).json(user);
+    // res.render('profile', {
+    //   ...user,
+    //   logged_in: true
+    // });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -42,9 +47,9 @@ router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     if(! User.isEmployer()){
-      res.redirect('/mySkills');      
+      res.redirect('/profile');      
     }else{
-      res.redirect('/skillCandidates');
+      res.redirect('/experts');
     }
     return;    
   }
@@ -53,34 +58,38 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/experts',  async (req, res) => {
-try{
- 
-  const expertsData = await User.findAll({
-    include:{
-      model: Skill,
-      attributes: ["skill_name"],    
-      
-    },
+  try {
+
+    const expertsData = await User.findAll({
+
+      include: [
+        {
+          model: Skill,
+          through: { UserSkill, attributes: ["level"], where: { level: "Expert" } },
+          attributes: ["skill_name"]
+        }
+      ],
+      attributes: ["first_name", "last_name"]
+    });
+
+
+    // const expertsData = await User.findAll({
+    //   include: [
+    //     { 
+    //       attributes: ["level"],
+    //       model: UserSkil , 
+    //       include: [{ attributes: ["skill_name"], model:Skill}]
+    //     }]        
+    //     }      
+    // );
+
     
-
-
-  });
-  // const expertsData = await UserSkill.findAll({
-  //    where: {level : [3,4,5,6,7,8,9] },
-  //     include:[{
-  //       model: User,
-  //       attributes: ['first_name', 'last_name']
-  //     },
-  //     {
-  //       model: Skill,
-  //       attributes : ['skill_name']
-  //     }]
-  //   });
-    console.log("After quert");
-    console.log(expertsData);
+    
     const experts = expertsData.map((expert) => expert.get({plain:true}));
-    console.log(experts);
-    res.status(200).json(experts);
+    res.render("experts",{
+    ...experts,
+    logged_in : req.session.logged_in});
+
 }catch(err){
   console.log(err);
   res.status(500).json(err);
