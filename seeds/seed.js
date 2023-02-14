@@ -20,20 +20,6 @@ const seedDatabase = async () => {
   
   await UserSkill.bulkCreate(userSkillData)
 
-  // for (const role of roleData) {
-  //   await Role.create({
-  //     ...role,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
-
-  // for (const userSkill of userSkillData) {
-  //   await UserSkill.create({
-  //     ...userSkill,
-  //     user_id: users[Math.floor(Math.random() * users.length)].id,
-  //   });
-  // }
-
   process.exit(0);
 };
 

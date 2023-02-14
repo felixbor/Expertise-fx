@@ -3,21 +3,16 @@ const Role = require('./Role');
 const Skill = require('./Skill');
 const UserSkill = require('./UserSkill');
 
-// User.hasOne(Role, {
-//   foreignKey: 'role_id',
-// });
-
-// Role.belongsTo(User,{
-//   foreignKey: 'role_id'
-// })
-
+//Connecting the role and user
 Role.hasMany(User, {
   foreignKey : 'role_id'
 });
+
 User.belongsTo(Role, {
   foreignKey: "role_id"
-})
-//////////////////////////
+});
+
+//Connecting the user and user skill
 User.hasMany(UserSkill, {
   foreignKey: "user_id"
 });
@@ -25,7 +20,8 @@ User.hasMany(UserSkill, {
 UserSkill.belongsTo(User, {
   foreignKey: "user_id"
 });
-////////////////////
+
+//Connecting skill and userskill
 Skill.hasMany(UserSkill, {
   foreignKey: "skill_id"
 });
@@ -33,18 +29,19 @@ Skill.hasMany(UserSkill, {
 UserSkill.belongsTo(Skill, {
   foreignKey: "skill_id"
 });
-///////////////////////
+
+//Connecting the user and skill through userskill
 User.belongsToMany(Skill, {
   through: UserSkill,
   foreignKey: 'user_id',
-})
+});
 
 Skill.belongsToMany(User, {
   through: UserSkill,
   foreignKey: 'skill_id'
-})
-//////////////////////
+});
 
+//Connecting role and skill
 Role.hasMany(Skill, {
   foreignKey: "role_id"
 });
