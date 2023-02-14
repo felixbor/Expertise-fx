@@ -2,43 +2,43 @@
     {
         "user_id": 1,
         "skill_id": 3,
-        "level": 8,
+        "level": "Expert",
         "comment": "I am a pro at this"
     },
     {
         "user_id": 1,
         "skill_id": 1,
-        "level": 5,
+        "level": "Intermediate",
         "comment": "I am a pro at this"
     },
     {
         "user_id": 2,
         "skill_id": 6,
-        "level": 9,
+        "level": "Expert",
         "comment": "I am a pro at this"
     },
     {
         "user_id": 2,
         "skill_id": 18,
-        "level": 5,
+        "level": "Intermediate",
         "comment": "I am a pro at this"
     },
     {
         "user_id": 2,
         "skill_id": 12,
-        "level": 10,
+        "level": "Expert",
         "comment": "I am a pro at this"
     },
     {
         "user_id": 2,
         "skill_id": 15,
-        "level": 6,
+        "level": "Intermediate",
         "comment": "I am a pro at this"
     },
     {
         "user_id": 2,
         "skill_id": 9,
-        "level": 3,
+        "level": "Beginner",
         "comment": "I am a pro at this"
     }
 ]
