@@ -24,11 +24,16 @@
         </form>
       </div>
      <div class="container">
- {{#each experts.[i] as |expert|}}
+ {{#each experts as |expert|}}
   
         <div class="card">
-            <h2>{{expert.first_name}} level /10</h2>
+            <h2>{{expert.first_name}} {{expert.last_name}} </h2>
            
+           <ul> 
+               {{#each expert.Skills as |expertSk|}}
+                <li> {{expertSk.skill_name}}   {{expertSk.Skills.skill_name}}</li>
+                {{/each}} 
+            </ul>
         </div>
 
    
