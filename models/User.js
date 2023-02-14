@@ -43,7 +43,7 @@ User.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'role',
+        model: 'Role',
         key: 'id',
       },
     },
@@ -67,7 +67,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: 'User',
   }
 );
 
