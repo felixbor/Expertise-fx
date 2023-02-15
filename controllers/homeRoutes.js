@@ -29,8 +29,15 @@ router.get('/profile', withAuth,  async (req, res) => {
 
     const user = userData.get({ plain: true });
 
+    const allSkillsData = await Skill.findAll();
+    
+    const allSkills = allSkillsData.map((skillData)=> skillData.get({plain : true }));
+
+console.log(user);
+console.log(allSkills);
     res.render('profile', {
       user,
+      allSkills,
       logged_in: true
     });
   } catch (err) {
@@ -59,13 +66,26 @@ router.get('/experts',  async (req, res) => {
     const expertsData = await User.findAll({
       attributes: ["first_name", "last_name"],
       include: [
-        {
-          model: Skill,
-          through: {UserSkill, where: {level : "Expert"}  }       
-        }
+        { model: Skill }, {model: UserSkill , where: { level : "Expert"}   },
       ]
-      
     });
+
+    const experts = expertsData.map((expert) => expert.get({plain:true}));
+    console.log(experts);
+
+    res.render("experts",{
+    experts,
+    logged_in : req.session.logged_in});
+
+}catch(err){
+  console.log(err);
+  res.status(500).json(err);
+}
+});
+
+module.exports = router;
+
+
 
 // include: [
       //   {
@@ -85,22 +105,5 @@ router.get('/experts',  async (req, res) => {
     //     }]        
     //     }      
     // );
-
     
     
-    const experts = expertsData.map((expert) => expert.get({plain:true}));
-    console.log(experts);
-
-    res.render("experts",{
-    experts,
-    logged_in : req.session.logged_in});
-
-}catch(err){
-  console.log(err);
-  res.status(500).json(err);
-}
-  
-  //res.render('experts');
-});
-
-module.exports = router;
