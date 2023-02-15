@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     // Get all the required data to be displayed in the home page
 
     // Pass serialized data and session flag into template
-    res.render('home', {       
+    res.render('homepage', {       
       logged_in: req.session.logged_in 
     });
   } catch (err) {
@@ -19,22 +19,20 @@ router.get('/', async (req, res) => {
 
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile',  async (req, res) => {
+router.get('/profile', withAuth,  async (req, res) => {
   try {
     // Find the logged in user based on the session ID req.session.user_id
-    const userData = await User.findByPk(1, {
+    const userData = await User.findByPk(req.session.user_id, {
      attributes: { exclude: ['password'] },
       include: [{model:Role  },{ model: Skill, through: UserSkill }],
     });
 
     const user = userData.get({ plain: true });
-console.log("inside profile");
-console.log(user);
- res.status(200).json(user);
-    // res.render('profile', {
-    //   ...user,
-    //   logged_in: true
-    // });
+
+    res.render('profile', {
+      user,
+      logged_in: true
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -59,17 +57,24 @@ router.get('/experts',  async (req, res) => {
   try {
 
     const expertsData = await User.findAll({
-
+      attributes: ["first_name", "last_name"],
       include: [
         {
           model: Skill,
-          through: { UserSkill, attributes: ["level"], where: { level: "Expert" } },
-          attributes: ["skill_name"]
+          through: {UserSkill, where: {level : "Expert"}  }       
         }
-      ],
-      attributes: ["first_name", "last_name"]
+      ]
+      
     });
 
+// include: [
+      //   {
+      //     model: Skill,
+      //     through: { UserSkill, attributes: ["level"], where: { level: "Expert" } },
+      //     attributes: ["skill_name"]
+      //   }
+      // ],
+      // attributes: ["first_name", "last_name"]
 
     // const expertsData = await User.findAll({
     //   include: [
@@ -84,8 +89,10 @@ router.get('/experts',  async (req, res) => {
     
     
     const experts = expertsData.map((expert) => expert.get({plain:true}));
+    console.log(experts);
+
     res.render("experts",{
-    ...experts,
+    experts,
     logged_in : req.session.logged_in});
 
 }catch(err){
