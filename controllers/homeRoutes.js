@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     // Get all the required data to be displayed in the home page
 
     // Pass serialized data and session flag into template
-    res.render('home', {       
+    res.render('homepage', {       
       logged_in: req.session.logged_in 
     });
   } catch (err) {
