@@ -1,82 +1,63 @@
 [
   {
-    "skill_name": "HTML",
-    "role_id": 1
+    "skill_name": "HTML"
   },
   {
-    "skill_name": "CSS",
-    "role_id": 1
+    "skill_name": "CSS"
   },
   {
-    "skill_name": "JavaScript",
-    "role_id": 1
+    "skill_name": "JavaScript"
   },
   {
-    "skill_name": "ActiveVFP",
-    "role_id": 1
+    "skill_name": "ActiveVFP"
+
   },
   {
-    "skill_name": "ASP",
-    "role_id": 1
+    "skill_name": "ASP"
   },
   {
-    "skill_name": "ASP.NET",
-    "role_id": 1
+    "skill_name": "ASP.NET"
   },
   {
-    "skill_name": ".NET",
-    "role_id": 1
+    "skill_name": ".NET"
   },
   {
-    "skill_name": "Java",
-    "role_id": 1
+    "skill_name": "Java"
   },
   {
-    "skill_name": "Angular",
-    "role_id": 1
+    "skill_name": "Angular"
   },
   {
-    "skill_name": "C++",
-    "role_id": 1
+    "skill_name": "C++"
   },
   {
-    "skill_name": "AmazonAWS",
-    "role_id": 1
+    "skill_name": "AmazonAWS"
   },
   {
-    "skill_name": "SQL",
-    "role_id": 1
+    "skill_name": "SQL"
   },
   {
-    "skill_name": "R",
-    "role_id": 1
+    "skill_name": "R"
   },
   {
-    "skill_name": "React",
-    "role_id": 1
+    "skill_name": "React"
   },
   {
-    "skill_name": "Python",
-    "role_id": 1
+    "skill_name": "Python"
   },
   {
-    "skill_name": "NodeJS",
-    "role_id": 1
+    "skill_name": "NodeJS"
   },
   {
-    "skill_name": "ExpressJS",
-    "role_id": 1
+    "skill_name": "ExpressJS"
   },
   {
-    "skill_name": "Ruby",
-    "role_id": 1
+    "skill_name": "Ruby"
   },
   {
-    "skill_name": "C#",
-    "role_id": 1
+    "skill_name": "C#"
   },
   {
-    "skill_name": "MongoDB",
-    "role_id": 1
+    "skill_name": "MongoDB"
   }
 ]
