@@ -1,20 +1,22 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
+ const user_id=3
+  const skill_id = document.querySelector('#skill-name').value;
+  const level = document.querySelector('#skill-level').value;
+ console.log(skill_id)
+ console.log(level)
 
-  
-  const needed_funding = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
-
-  if (names && needed_funding && description) {
-    const response = await fetch(`/api/projects`, {
+  if (skill_id && level ) {
+    const response = await fetch(`/api/skills`, {
       method: 'POST',
-      body: JSON.stringify({ name, needed_funding, description }),
+      body: JSON.stringify({skill_id, level}),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
     if (response.ok) {
+      console.log(response)
       document.location.replace('/profile');
     } else {
       alert('Failed to create project');
@@ -39,9 +41,9 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-project-form')
+  .querySelector('.new-skill-form')
   .addEventListener('submit', newFormHandler);
 
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
+//document
+  //.querySelector('.project-list')
+ // .addEventListener('click', delButtonHandler);
