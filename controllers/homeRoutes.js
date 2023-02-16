@@ -31,7 +31,7 @@ router.get('/profile', withAuth,  async (req, res) => {
 
     const allSkillsData = await Skill.findAll();
     
-    const allSkills = allSkillsData.map((skillData)=> skillData.get({plain : true }));
+    const allSkills = allSkillsData.map((skillData)=> skillData.get({plain : true });
 
 console.log(user);
 console.log(allSkills);
