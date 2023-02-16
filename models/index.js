@@ -41,13 +41,4 @@ Skill.belongsToMany(User, {
   foreignKey: 'skill_id'
 });
 
-//Connecting role and skill
-Role.hasMany(Skill, {
-  foreignKey: "role_id"
-});
-
-Skill.belongsTo(Role, {
-  foreignKey: "role_id"
-})
-
 module.exports = { User, Role, Skill, UserSkill };
