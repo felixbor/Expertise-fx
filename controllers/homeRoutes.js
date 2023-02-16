@@ -31,7 +31,7 @@ router.get('/profile', withAuth,  async (req, res) => {
 
     const allSkillsData = await Skill.findAll();
     
-    const allSkills = allSkillsData.map((skillData)=> skillData.get({plain : true });
+    const allSkills = allSkillsData.map((skillData)=> skillData.get({plain : true }));
 
 console.log(user);
 console.log(allSkills);
@@ -49,10 +49,12 @@ console.log(allSkills);
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    if(! User.isEmployer()){
+    const is_employer =  User.findByPk(req.session.user_id).is_employer;
+    console.log(is_employer);
+    if(! is_employer){
       res.redirect('/profile');      
     }else{
-      res.redirect('/experts');
+      res.redirect('/search');
     }
     return;    
   }
@@ -82,6 +84,8 @@ router.get('/experts',  async (req, res) => {
   res.status(500).json(err);
 }
 });
+
+
 
 module.exports = router;
 

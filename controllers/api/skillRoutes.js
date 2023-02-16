@@ -10,7 +10,7 @@ router.post('/', withAuth, async (req, res) => {
     try{
         const newSkill = await UserSkill.create({
             ...req.body,
-            user_id: req.session.id
+            user_id: req.session.user_id
          });
          res.status(200).json(newSkill);
     }catch(err){
