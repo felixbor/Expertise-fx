@@ -40,7 +40,11 @@ router.get('/:skill_id', withAuth, async(req,res) =>{
         const usersWithSkill = usersWithSkillData.map(userData=>userData.get({plain:true}));
 
         console.log(usersWithSkill);
-        res.status(200).json(usersWithSkill);
+        //res.status(200).json(usersWithSkill);
+        res.render('cards', {
+            usersWithSkill,
+            logged_in: true
+          });
 
     }catch(err){
         console.log(err);
