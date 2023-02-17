@@ -25,19 +25,24 @@ const loginFormHandler = async (event) => {
 const signupFormHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#name-signup').value.trim();
+  const first_name = document.querySelector('#firstname-signup').value.trim();
+  const last_name = document.querySelector('#lastname-signup').value.trim();
+  const is_employer = document.querySelector('#is_employer').checked
+console.log(is_employer)
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-  if (name && email && password) {
+  if (  first_name&&last_name && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ is_employer,first_name,last_name, email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+console.log(response)
     if (response.ok) {
-      document.location.replace('/profile');
+      if (!is_employer){
+      document.location.replace('/profile')}
+      else {document.location.replace('/manager')}
     } else {
       alert(response.statusText);
     }

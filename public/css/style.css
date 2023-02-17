@@ -3,24 +3,28 @@
 .no-button {
   background: none;
   border: none;
-  padding: 0;
+  padding-top: 20px;
+ 
   cursor: pointer;
-  color: #1b89bc;
+  color: #e2e7e9;
   text-decoration: none;
-  font-size: 100%;
+  font-size: 1.5em;
+  padding-left: 20px;
 }
 
 .no-button:hover {
-  color: #112a35;
+
   text-decoration: underline;
-  background-color: #1b89bc;
+ 
 }
 
 
 body {
   background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixid=Mnw0MDkzODR8MHwxfHNlYXJjaHw0fHx0ZWNobm9sb2d5fGVufDB8fHx8MTY3NjE1MzIzMw&ixlib=rb-4.0.3');
   background-size: 120%;
-  height: auto;
+  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 header {
   display: inline;
@@ -80,7 +84,6 @@ nav a {
   color: rgb(10, 10, 10);
  background-color: #92b7c9;
 opacity: 0.8;
-margin-bottom: 12%;
 padding-right: 10px;
 padding-left: 10px;
 }
@@ -117,14 +120,23 @@ padding-left: 10px;
 .search {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  
 
 }
+.search  p{
+   
+  color:aliceblue;
+  font-size: 2em;
+  
+  }
 .profile{
  background-color: aliceblue;
 opacity: 0.75;
 margin: 10%;
 margin-left: 30%;
-max-width: 50%;
+
+max-width: 30%;
    
 }
 
@@ -168,10 +180,7 @@ a:hover {
 
 .login-logout {
   color: rgb(11, 12, 12);
-  
   background-color: aliceblue;
- 
-
 
 }
 #im2, #im3  {
@@ -203,11 +212,23 @@ opacity: 0.12;
 footer{
   color: aliceblue;
   text-align: center;
-  
+  margin-top: auto;
 }
 footer a{
   color: aliceblue;
   text-decoration: underline;
-  text-align: justify;
-  margin: 20px;
+  margin:50px
+ 
+}
+
+#skill-list{
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+.btn-del{
+  width: auto;
+  height: fit-content;
+  margin-top: 15px;
+  margin-left: 10px;
 }

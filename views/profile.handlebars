@@ -1,70 +1,69 @@
+<div class="profile">
 
-      <div class="profile">
-        <div class="user-form">
-          <h2>Welcome, {{name}}!</h2>
-        </div>
-
-
-        <div class=" ">
-          <div class="user-form">
-            <h3>Add a new skill:</h3>
-
-            <form class="form ">
-              <div class="form-group">
-                <label for="skill-name">skill name:</label>
-                <select class="form-input" type="text" id="skill-name" >
-                    <option placeholder="select"></option>
-                    <option value="css">css</option>
-                    <option value="JAVA ">JAVA </option>
-                    <option value="JAVA SCRIPT">JAVA SCRIPT</option>
-                    <option value="SQL">SQL </option>
-                    <option value="Project 1">FULL STACK</option>
-                    <option value="html">HTML</option>
-                    <option value="PYTHON">PYTHON</option>
-                    <option value="RUBI">RUBI </option>
-                
-                </select>
-               
-              </div>
-              <div class="form-group">
-                <label for="skill-level">level of skill :</label>
-                <select class="form-input"  type="number" id="skill-level" >
-                    <option placeholder="select"></option>
-                    <option value="1">1</option>
-                    <option value="2 ">2 </option>
-                    <option value="3">3</option>
-                    <option value="4">4 </option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8 </option>
-                
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="project-desc">description:</label>
-                <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary">Create</button>
-              </div>
-            </form>
-          </div>
-          {{#if projects.length}}
-          <div class="user-form">
-            <h3>Current Projects:</h3>
-
-            {{#each projects as |project|}}
-            <div class="">
-              <div class="">
-                <h4>{{project.name}}</h4>
-              </div>
-              <div class="">
-                <button class="btn " data-id="{{project.id}}">DELETE</button>
-              </div>
-            </div>
-            {{/each}}
-          </div>
-          {{/if}}
-        </div>
+  <div class="user-form">
+    <h2>Welcome, {{user.first_name}}!</h2>
+    <div>
+      <p>Your existing skills</p>
+      <div class="try">
+        {{#each user.Skills as |userSk|}}
+        <form id="skill-list">
+          <p> {{userSk.skill_name}} -Level: {{userSk.UserSkill.level}} </p>
+          <button class=" btn-del" data-id="{{userSk.UserSkill.skill_id}}">DELETE</button>
+        </form>
+        {{/each}}
       </div>
+
+
+    </div>
+
+
+    <div class=" ">
+      <div class="user-form">
+        <h3>Add a new skill:</h3>
+
+        <form class="form  new-skill-form">
+          <div class="form-group">
+            <label for="skill-name">skill name:</label>
+            <select class="form-input" type="number" id="skill-name">
+              <option placeholder="select"></option>
+              <option value="1">HTML</option>
+              <option value="2 ">CSS </option>
+              <option value="3">JAVA SCRIPT</option>
+              <option value="4">ActiveVFP </option>
+              <option value="5">ASP</option>
+              <option value="6">ASP.NET</option>
+              <option value="7">.NET</option>
+              <option value="8">Java </option>
+              <option value="9">Angular </option>
+              <option value="10">C++ </option>
+              <option value="11">AmazonAWS </option>
+              <option value="12">SQL </option>
+              <option value="13">R </option>
+              <option value="14">React </option>
+              <option value="15">Python </option>
+              <option value="16">NodeJS </option>
+              <option value="17">ExpressJS </option>
+              <option value="18">Ruby </option>
+              <option value="19">C# </option>
+              <option value="20">MongoDB </option>
+            </select>
+
+          </div>
+          <div class="form-group">
+            <label for="skill-level">level of skill :</label>
+            <select class="form-input" type="text" id="skill-level">
+              <option placeholder="select"></option>
+              <option value="Expert">Expert</option>
+              <option value="Intermediate ">Intermediate </option>
+              <option value="Beginner">Beginner</option>
+
+
+
+            </select>
+
+            <div class="form-group">
+              <button type="submit" class="btn ">Add skill</button>
+            </div>
+        </form>
+      </div>
+      <script src="/js/profile.js"></script>

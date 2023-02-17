@@ -1,0 +1,59 @@
+<div class="search-box">
+    <form id="form">
+        <label id="label"> Select a field of expretise you need employee for </label>
+        <div class="search">
+            <div class="project">
+                <select class="skill-id">
+              <option placeholder="select"></option>
+              <option value="1">HTML</option>
+              <option value="2 ">CSS </option>
+              <option value="3">JAVA SCRIPT</option>
+              <option value="4">ActiveVFP </option>
+              <option value="5">ASP</option>
+              <option value="6">ASP.NET</option>
+              <option value="7">.NET</option>
+              <option value="8">Java </option>
+              <option value="9">Angular </option>
+              <option value="10">C++ </option>
+              <option value="11">AmazonAWS </option>
+              <option value="12">SQL </option>
+              <option value="13">R </option>
+              <option value="14">React </option>
+              <option value="15">Python </option>
+              <option value="16">NodeJS </option>
+              <option value="17">ExpressJS </option>
+              <option value="18">Ruby </option>
+              <option value="19">C# </option>
+              <option value="20">MongoDB </option>
+                </select>
+            </div>
+            <button class="search" type="submit">Search</button>
+            
+                
+        </div>
+    </form>
+</div>
+<div class=container>
+    
+    <div class="container">
+        {{#each usersWithSkill as |expert|}}
+
+        <div class="card">
+            <h2>{{expert.first_name}} {{expert.last_name}} </h2>
+            
+            {{#each expert.UserSkills as |SkillLevel|}}
+
+                <p> skill level:{{SkillLevel.level}} </p>
+            {{/each}}
+            
+            <h2>email: {{expert.email}}  </h2>
+            <ul>
+                
+            </ul>
+        </div>
+
+
+        {{/each}}
+    </div>
+</div>
+<script src="/js/search.js"></script>
