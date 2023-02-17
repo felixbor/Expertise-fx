@@ -40,6 +40,8 @@ const delButtonHandler = async (event) => {
   }
 };
 
+document.getElementById("profile_link_id").remove();
+
 document
   .querySelector('.new-skill-form')
   .addEventListener('submit', newFormHandler);

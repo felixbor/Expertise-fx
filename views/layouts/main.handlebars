@@ -13,16 +13,27 @@
         <img src="/pictures/logo-white.png" alt="logo">
         <p>Find Your Perfect Expert</p>
     </Header>
+    
     <nav>
-        <a href="/" class="dashboard-btn">Home</a>
-        <a href="/experts" >Experts</a>
-        <a href="/search/:skill_id">Skill Search</a>
+        {{!-- <a href="/" class="dashboard-btn">Home</a> --}}
+        {{!-- <a href="/search/:skill_id">Skill Search</a> --}}
       {{#if logged_in}}
-        <a href="/profile" >Profile</a>
-        <button class="no-button" id="logout">Logout</button>
-        {{else}}
-        <a href="/login">Login</a>
+        {{#if is_employer }}
+             <a href="/" class="dashboard-btn">Home</a>
+              <a href="/experts" >Experts</a>       
+             <a href="/search" id="search_link_id" >Search</a>
+             <button class="no-button" id="logout">Logout</button> 
+          {{else}}
+            <a href="/" class="dashboard-btn">Home</a>
+             <a href="/experts" >Experts</a>
+       
+            <a href="/profile" id="profile_link_id">Profile</a>
+            <button class="no-button" id="logout">Logout</button>        
         {{/if}}
+      {{else}}
+      <a href="/experts" >Experts</a>    
+        <a href="/login">Login</a>
+      {{/if}}
     </nav>
  
     <main >

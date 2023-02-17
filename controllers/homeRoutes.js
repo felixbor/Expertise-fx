@@ -6,27 +6,30 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all the required data to be displayed in the home page
-    const fronEndCount = await User.findAndCountAll({include:[{
+    const frontEnds = await User.findAndCountAll({include:[{
       model: Role ,where:{role_name: "Front-End Developer"}
       }]
     });
     
-    const backEndCount = await User.findAndCountAll({include:[{
+    const backEnds = await User.findAndCountAll({include:[{
       model: Role ,where:{role_name: 'Back-End Developer'}
       }]
     });
 
-    const fullStackCount = await User.findAndCountAll({include:[{
+    const fullStacks = await User.findAndCountAll({include:[{
       model: Role ,where:{role_name: "FullStack Developer"}
       }]
     });
-    console.log(backEndCount);
-    console.log(fronEndCount);
-    console.log(fullStackCount);
-
+   
     // Pass serialized data and session flag into template
     res.render('homepage', {       
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in,
+      is_employer:req.session.is_employer,
+      fullStackCount: fullStacks.count,
+      backEndCount: backEnds.count,
+      frontEndCount:frontEnds.count
+
+
     });
   } catch (err) {
     res.status(500).json(err);
@@ -55,7 +58,8 @@ console.log(allSkills);
     res.render('profile', {
       user,
       allSkills,
-      logged_in: true
+      logged_in: true,
+      is_employer: req.session.is_employer
     });
   } catch (err) {
     console.log(err);
@@ -104,6 +108,7 @@ router.get('/experts',  async (req, res) => {
 
     res.render("experts",{
     experts,
+    is_employer: req.session.is_employer,
     logged_in : req.session.logged_in});
 
 }catch(err){
