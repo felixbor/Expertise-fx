@@ -1,3 +1,5 @@
+
+   
 const newFormHandler = async (event) => {
     event.preventDefault();
    
@@ -16,14 +18,16 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-       // document.querySelector('.skill-id').value=skill_id
-        console.log(response)
-        document.location.replace(`/search/${skill_id}`);
+       document.location.replace(`/search/${skill_id}`);
+        
       } else {
         alert('Failed to find');
       }
     }
   };
+  // document.querySelector('.skill-id').value = skill_id;
+       
+  document.getElementById("search_link_id").remove();
   document
   .querySelector('#form')
   .addEventListener('submit', newFormHandler);

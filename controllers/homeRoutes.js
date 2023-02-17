@@ -6,10 +6,30 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all the required data to be displayed in the home page
+    const frontEnds = await User.findAndCountAll({include:[{
+      model: Role ,where:{role_name: "Front-End Developer"}
+      }]
+    });
+    
+    const backEnds = await User.findAndCountAll({include:[{
+      model: Role ,where:{role_name: 'Back-End Developer'}
+      }]
+    });
 
+    const fullStacks = await User.findAndCountAll({include:[{
+      model: Role ,where:{role_name: "FullStack Developer"}
+      }]
+    });
+   
     // Pass serialized data and session flag into template
     res.render('homepage', {       
-      logged_in: req.session.logged_in 
+      logged_in: req.session.logged_in,
+      is_employer:req.session.is_employer,
+      fullStackCount: fullStacks.count,
+      backEndCount: backEnds.count,
+      frontEndCount:frontEnds.count
+
+
     });
   } catch (err) {
     res.status(500).json(err);
@@ -38,7 +58,8 @@ console.log(allSkills);
     res.render('profile', {
       user,
       allSkills,
-      logged_in: true
+      logged_in: true,
+      is_employer: req.session.is_employer
     });
   } catch (err) {
     console.log(err);
@@ -46,19 +67,29 @@ console.log(allSkills);
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', async (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    const is_employer =  User.findByPk(req.session.user_id).is_employer;
-    console.log(is_employer);
-    if(! is_employer){
-      res.redirect('/profile');      
-    }else{
-      res.redirect('/search');
-    }
-    return;    
-  }
+  try{
+    if (req.session.logged_in) {
+      const currentUser =  await User.findByPk(req.session.user_id);
+      const user = currentUser.get({plain:true});
 
+      const is_employer = user.is_employer;
+      console.log("The user is employer?");
+      console.log(is_employer);
+      if(! is_employer){
+        res.redirect('/profile');      
+      }else{
+        res.redirect('/search');
+      }
+      return;    
+    }
+  
+  }catch(err){
+    console.log(err);
+    res.status(500).json(err);
+  }
+  
   res.render('login');
 });
 
@@ -77,6 +108,7 @@ router.get('/experts',  async (req, res) => {
 
     res.render("experts",{
     experts,
+    is_employer: req.session.is_employer,
     logged_in : req.session.logged_in});
 
 }catch(err){

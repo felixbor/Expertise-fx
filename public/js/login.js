@@ -14,8 +14,17 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      // If successful, redirect 
+      const userData = await response.json();
+      console.log(userData);
+      const is_employer = userData["user"]["is_employer"];
+      console.log(is_employer);
+      if(is_employer){
+        document.location.replace('/search');
+      }else{
+        document.location.replace('/profile');
+      }
+      
     } else {
       alert(response.statusText);
     }
@@ -40,9 +49,16 @@ console.log(is_employer)
     });
 console.log(response)
     if (response.ok) {
-      if (!is_employer){
-      document.location.replace('/profile')}
-      else {document.location.replace('/search')}
+      const userData = await response.json();
+      console.log(userData);
+      const is_employer = userData["is_employer"];
+      console.log(is_employer);
+      if(is_employer){
+        document.location.replace('/search');
+      }else{
+        document.location.replace('/profile');
+      }
+      
     } else {
       alert(response.statusText);
     }
