@@ -42,7 +42,7 @@ console.log(response)
     if (response.ok) {
       if (!is_employer){
       document.location.replace('/profile')}
-      else {document.location.replace('/manager')}
+      else {document.location.replace('/search')}
     } else {
       alert(response.statusText);
     }
