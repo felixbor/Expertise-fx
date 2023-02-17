@@ -24,7 +24,15 @@
         <form class="form  new-skill-form">
           <div class="form-group">
             <label for="skill-name">skill name:</label>
-            <select class="form-input" type="number" id="skill-name">
+            
+            <select class="form-input" type="number" id="skill-name" >
+                  <option placeholder="select"></option>
+                  {{#each allSkills as |skill|}}
+                    <option value="{{skill.id}}">{{skill.skill_name}}</option>
+                    {{/each}}
+                </select> 
+
+            {{!-- <select class="form-input" type="number" id="skill-name">
               <option placeholder="select"></option>
               <option value="1">HTML</option>
               <option value="2 ">CSS </option>
@@ -46,7 +54,7 @@
               <option value="18">Ruby </option>
               <option value="19">C# </option>
               <option value="20">MongoDB </option>
-            </select>
+            </select> --}}
 
           </div>
           <div class="form-group">

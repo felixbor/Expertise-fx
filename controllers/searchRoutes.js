@@ -12,6 +12,7 @@ router.get('/',withAuth, async(req,res)=>{
 
     res.render('search', {    
       allSkills,
+      is_employer:req.session.is_employer,
       logged_in: true
     });
 
@@ -24,11 +25,12 @@ router.get('/',withAuth, async(req,res)=>{
 
 
 router.get('/:skill_id', withAuth, async(req,res) =>{
-   
+     
     try{
+        const selected_skill_id = req.params.skill_id;
         const usersWithSkillData = await User.findAll({
             include:[
-                {model: UserSkill , where:{skill_id: req.params.skill_id }}, {model: Role}
+                {model: UserSkill , where:{skill_id: selected_skill_id }}, {model: Role}
             ],
             attributes: ["first_name", "last_name", "email"]
         });
@@ -39,10 +41,18 @@ router.get('/:skill_id', withAuth, async(req,res) =>{
           }
         const usersWithSkill = usersWithSkillData.map(userData=>userData.get({plain:true}));
 
+
+        const allSkillsData = await Skill.findAll();
+      
+        const allSkills = allSkillsData.map((skillData)=> skillData.get({plain : true }));
+
         console.log(usersWithSkill);
-        //res.status(200).json(usersWithSkill);
-        res.render('cards', {
+       // res.status(200).json(usersWithSkill);
+        res.render('search', {
             usersWithSkill,
+            allSkills,
+            selected_skill_id: req.params.skill_id,
+            is_employer:req.session.is_employer,
             logged_in: true
           });
 

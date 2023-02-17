@@ -1,8 +1,18 @@
+
+
 <div class="search-box">
   <form id="form">
     <label id="label"> Select a field of expretise you need employee for </label>
     <div class="search">
       <div class="project">
+        <select class="skill-id" type="number
+        " id="skill-name" >
+                  <option placeholder="select"></option>
+                  {{#each allSkills as |skill|}}
+                    <option value="{{skill.id}}" {{#if  (isEqual selected_skill_id skill.id)}} selected {{/if}}>{{skill.skill_name}}</option>
+                    {{/each}}
+                </select>
+{{!--                 
         <select class="skill-id">
           <option placeholder="select"></option>
           <option value="1">HTML</option>
@@ -21,11 +31,12 @@
           <option value="14">React </option>
           <option value="15">Python </option>
           <option value="16">NodeJS </option>
-          <option value="17">ExpressJS </option>
+          <option value="17" >ExpressJS </option>
           <option value="18">Ruby </option>
           <option value="19">C# </option>
           <option value="20">MongoDB </option>
-        </select>
+        </select> --}}
+       
       </div>
       <button class="search" type="submit">Search</button>
       
@@ -33,8 +44,6 @@
     </div>
   </form>
 </div>
-
-
 
 
 </div>
