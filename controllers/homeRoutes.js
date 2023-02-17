@@ -6,6 +6,23 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
   try {
     // Get all the required data to be displayed in the home page
+    const fronEndCount = await User.findAndCountAll({include:[{
+      model: Role ,where:{role_name: "Front-End Developer"}
+      }]
+    });
+    
+    const backEndCount = await User.findAndCountAll({include:[{
+      model: Role ,where:{role_name: 'Back-End Developer'}
+      }]
+    });
+
+    const fullStackCount = await User.findAndCountAll({include:[{
+      model: Role ,where:{role_name: "FullStack Developer"}
+      }]
+    });
+    console.log(backEndCount);
+    console.log(fronEndCount);
+    console.log(fullStackCount);
 
     // Pass serialized data and session flag into template
     res.render('homepage', {       
@@ -46,19 +63,29 @@ console.log(allSkills);
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', async (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    const is_employer =  User.findByPk(req.session.user_id).is_employer;
-    console.log(is_employer);
-    if(! is_employer){
-      res.redirect('/profile');      
-    }else{
-      res.redirect('/search');
-    }
-    return;    
-  }
+  try{
+    if (req.session.logged_in) {
+      const currentUser =  await User.findByPk(req.session.user_id);
+      const user = currentUser.get({plain:true});
 
+      const is_employer = user.is_employer;
+      console.log("The user is employer?");
+      console.log(is_employer);
+      if(! is_employer){
+        res.redirect('/profile');      
+      }else{
+        res.redirect('/search');
+      }
+      return;    
+    }
+  
+  }catch(err){
+    console.log(err);
+    res.status(500).json(err);
+  }
+  
   res.render('login');
 });
 
