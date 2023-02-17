@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
    <Header>
-        <img src="./pictures/logo-white.png" alt="logo">
+        <img src="/pictures/logo-white.png" alt="logo">
         <p>Find Your Perfect Expert</p>
     </Header>
     <nav>
         <a href="/" class="dashboard-btn">Home</a>
         <a href="/experts" >Experts</a>
-        <a href="/manager">Search expert by project</a>
+        <a href="/search/:skill_id">Skill Search</a>
       {{#if logged_in}}
         <a href="/profile" >Profile</a>
         <button class="no-button" id="logout">Logout</button>
@@ -24,7 +24,7 @@
         <a href="/login">Login</a>
         {{/if}}
     </nav>
- +
+ 
     <main >
       <!-- Render the sub layout -->
       {{{ body }}}

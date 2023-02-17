@@ -22,7 +22,9 @@
 body {
   background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixid=Mnw0MDkzODR8MHwxfHNlYXJjaHw0fHx0ZWNobm9sb2d5fGVufDB8fHx8MTY3NjE1MzIzMw&ixlib=rb-4.0.3');
   background-size: 120%;
-  height: auto;
+  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 header {
   display: inline;
@@ -134,7 +136,7 @@ opacity: 0.75;
 margin: 10%;
 margin-left: 30%;
 
-max-width: 40%;
+max-width: 30%;
    
 }
 
@@ -210,11 +212,23 @@ opacity: 0.12;
 footer{
   color: aliceblue;
   text-align: center;
-  
+  margin-top: auto;
 }
 footer a{
   color: aliceblue;
   text-decoration: underline;
-  text-align: justify;
-  margin: 20px;
+  margin:50px
+ 
+}
+
+#skill-list{
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+.btn-del{
+  width: auto;
+  height: fit-content;
+  margin-top: 15px;
+  margin-left: 10px;
 }
