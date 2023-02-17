@@ -1,42 +1,30 @@
-[
-  {
-    "first_name": "Sal",
-    "last_name": "Salamon",
-    "email": "sal@hotmail.com",
-    "password": "password12345",
-    "role_id": 1,
-    "is_employer": false
-  },
-  {
-    "first_name": "Sam",
-    "last_name": "Snake",
-    "email": "ssnake@hotmail.com",
-    "password": "password1234",
-    "role_id": 1,
-    "is_employer": false
-  },
-  {
-    "first_name": "Salizar",
-    "last_name": "Slytherin",
-    "email": "sslytheryn@hotmail.com",
-    "password": "password123",
-    "role_id": 1,
-    "is_employer": false
-  },
-  {
-    "first_name": "Char",
-    "last_name": "Gray",
-    "email": "Cgray@hotmail.com",
-    "password": "password12",
-    "role_id": 1,
-    "is_employer": false
-  },
-  {
-    "first_name": "Joe",
-    "last_name": "Bloggins",
-    "email": "blogman@hotmail.com",
-    "password": "password1",
-    "role_id": 1,
-    "is_employer": false
-  }
-]
+[{"first_name":"Nonna","last_name":"Hynde","email":"nhynde0@boston.com","password":"kJLmIcO","role_id":3,"is_employer":false},
+{"first_name":"Edythe","last_name":"Rotherham","email":"erotherham1@amazon.co.uk","password":"TZdQAzWniKk","role_id":3,"is_employer":false},
+{"first_name":"Burgess","last_name":"Camies","email":"bcamies2@livejournal.com","password":"o1ijKeN1","role_id":3,"is_employer":true},
+{"first_name":"Lee","last_name":"Lyokhin","email":"llyokhin3@soundcloud.com","password":"t5JJJ3CKKJQ","role_id":3,"is_employer":false},
+{"first_name":"Emanuel","last_name":"Lapides","email":"elapides4@lycos.com","password":"BdEawgoq","role_id":3,"is_employer":true},
+{"first_name":"Lucila","last_name":"Purshouse","email":"lpurshouse5@dailymail.co.uk","password":"f7YREK","role_id":1,"is_employer":true},
+{"first_name":"Cristionna","last_name":"Itzig","email":"citzig6@vimeo.com","password":"7flsZIk2q5L","role_id":3,"is_employer":true},
+{"first_name":"Cherin","last_name":"Bulger","email":"cbulger7@seattletimes.com","password":"lbKoNge","role_id":3,"is_employer":false},
+{"first_name":"Rock","last_name":"Dryburgh","email":"rdryburgh8@linkedin.com","password":"q1b72Hr0c0R7","role_id":1,"is_employer":false},
+{"first_name":"Lou","last_name":"Guillond","email":"lguillond9@nydailynews.com","password":"05LRE2Z","role_id":2,"is_employer":false},
+{"first_name":"Flemming","last_name":"Formilli","email":"fformillia@yale.edu","password":"Gy5NjSimIr","role_id":3,"is_employer":false},
+{"first_name":"Josee","last_name":"Shillabear","email":"jshillabearb@home.pl","password":"TkNuSR","role_id":2,"is_employer":false},
+{"first_name":"Demetre","last_name":"Sheryn","email":"dsherync@theguardian.com","password":"CGv1LnGE","role_id":3,"is_employer":true},
+{"first_name":"Mose","last_name":"Yarnold","email":"myarnoldd@ustream.tv","password":"AWhgfsDlJ","role_id":2,"is_employer":true},
+{"first_name":"Saunders","last_name":"Merle","email":"smerlee@goodreads.com","password":"mKrnIA79n1X","role_id":3,"is_employer":false},
+{"first_name":"Halsey","last_name":"Frederick","email":"hfrederickf@tinyurl.com","password":"U0ikAkbPa8fb","role_id":2,"is_employer":false},
+{"first_name":"Mari","last_name":"Gregorio","email":"mgregoriog@nsw.gov.au","password":"7rIWJB","role_id":3,"is_employer":true},
+{"first_name":"Kristan","last_name":"Vaun","email":"kvaunh@live.com","password":"nxDrK8tiL","role_id":2,"is_employer":false},
+{"first_name":"Stavros","last_name":"MacCarter","email":"smaccarteri@usa.gov","password":"TIQvzJsN4dA","role_id":1,"is_employer":true},
+{"first_name":"Janette","last_name":"Woodcroft","email":"jwoodcroftj@mac.com","password":"5EaPlc9Yq5s","role_id":2,"is_employer":true},
+{"first_name":"Coop","last_name":"Ciotto","email":"cciottok@feedburner.com","password":"V9w3jzGF","role_id":2,"is_employer":true},
+{"first_name":"Rowena","last_name":"Creyke","email":"rcreykel@epa.gov","password":"UNvyPkcanmY","role_id":3,"is_employer":true},
+{"first_name":"Banky","last_name":"Fursland","email":"bfurslandm@seesaa.net","password":"LRxaOu5eYxxz","role_id":3,"is_employer":false},
+{"first_name":"Kylie","last_name":"Camfield","email":"kcamfieldn@mlb.com","password":"uKtad7TKSEU","role_id":2,"is_employer":false},
+{"first_name":"Libbey","last_name":"Ferrone","email":"lferroneo@vimeo.com","password":"KdQlLFU4","role_id":2,"is_employer":true},
+{"first_name":"Efrem","last_name":"Arcase","email":"earcasep@illinois.edu","password":"UmT3ego1q","role_id":3,"is_employer":true},
+{"first_name":"Tudor","last_name":"Culbard","email":"tculbardq@aol.com","password":"iUJrgTIIb3v","role_id":2,"is_employer":false},
+{"first_name":"Claiborn","last_name":"Stickford","email":"cstickfordr@reverbnation.com","password":"snvCp8bchY","role_id":1,"is_employer":true},
+{"first_name":"Zedekiah","last_name":"Ludye","email":"zludyes@nifty.com","password":"x0VanQ","role_id":3,"is_employer":true},
+{"first_name":"Fayre","last_name":"Cashley","email":"fcashleyt@myspace.com","password":"3vY7J859ini","role_id":2,"is_employer":false}]

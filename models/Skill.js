@@ -15,14 +15,6 @@ Skill.init(
             type: DataTypes.STRING,
             allowNull: true,
         },
-        role_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'Role',
-                key: 'id',
-            },
-        },
     },
     {
         sequelize,
