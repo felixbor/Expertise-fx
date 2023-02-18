@@ -25,6 +25,7 @@ body {
   min-height: 100vh;
     display: flex;
     flex-direction: column;
+    
 }
 header {
   display: inline;
@@ -81,17 +82,19 @@ nav a {
 
 }
 .login-signup{
-  color: rgb(10, 10, 10);
- background-color: #92b7c9;
+  margin-top: 7%;
+  color: rgb(249, 247, 247);
+  backdrop-filter: invert(20%);
 opacity: 0.8;
 padding-right: 10px;
 padding-left: 10px;
+
 }
 .form-group{
   
   display: flex;
   flex-direction: column;
-  color: rgb(38, 37, 37);
+  color: rgb(249, 248, 248);
   padding: 10px;
   padding-right: 10px;
   
@@ -131,13 +134,16 @@ padding-left: 10px;
   
   }
 .profile{
- background-color: aliceblue;
+backdrop-filter: invert(15%);
 opacity: 0.75;
 margin: 10%;
-margin-left: 30%;
-
-max-width: 30%;
-   
+margin-left: 35%;
+color: #e2e7e9;
+max-width: 20%;
+padding: 2%;
+margin-left: 35%;
+border-radius: 5px;
+  border: 3px solid rgb(80, 79, 79);
 }
 
 
@@ -165,7 +171,7 @@ max-width: 30%;
 }
 
 a:hover {
-  color: rgb(193, 9, 239);
+  color: rgb(21, 144, 238);
   text-shadow: 5px 0px 50px rgb(247, 247, 251);
 }
 
@@ -174,6 +180,7 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content:center;
+
  
 
 }
@@ -206,8 +213,11 @@ opacity: 0.12;
 }
 .btn {
   color: black;
-  background-color: rgb(216, 201, 214);
+  background-color: rgb(247, 241, 246);
   border-radius: 3px;
+  width: 50%;
+  margin-top: 5%;
+  margin-left: 20%;
 }
 footer{
   color: aliceblue;
@@ -230,5 +240,5 @@ footer a{
   width: auto;
   height: fit-content;
   margin-top: 15px;
-  margin-left: 10px;
+  margin-left: 10%;
 }
