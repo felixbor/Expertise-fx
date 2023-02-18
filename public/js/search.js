@@ -27,7 +27,7 @@ const newFormHandler = async (event) => {
   };
   // document.querySelector('.skill-id').value = skill_id;
        
-  document.getElementById("search_link_id").remove();
+  //document.getElementById("search_link_id").remove();
   document
   .querySelector('#form')
   .addEventListener('submit', newFormHandler);

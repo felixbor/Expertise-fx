@@ -3,7 +3,7 @@
   <div class="user-form">
     <h2>Welcome, {{user.first_name}}!</h2>
     <div>
-      <p>Your existing skills</p>
+      <h3>Your existing skills</h3>
       <div class="try">
         {{#each user.Skills as |userSk|}}
         <form id="skill-list">
@@ -17,9 +17,9 @@
     </div>
 
 
-    <div class=" ">
+    <div >
       <div class="user-form">
-        <h3>Add a new skill:</h3>
+        <h2>Add a new skill:</h2>
 
         <form class="form  new-skill-form">
           <div class="form-group">

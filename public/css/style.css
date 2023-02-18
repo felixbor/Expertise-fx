@@ -4,12 +4,12 @@
   background: none;
   border: none;
   padding-top: 20px;
- 
   cursor: pointer;
   color: #e2e7e9;
   text-decoration: none;
-  font-size: 1.5em;
-  padding-left: 20px;
+  font-size: 32px;
+  margin-left: 5%;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .no-button:hover {
@@ -71,24 +71,23 @@ nav a {
 }
 
 
-
 #form {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
- 
-
 
 }
 .login-signup{
   margin-top: 7%;
   color: rgb(249, 247, 247);
   backdrop-filter: invert(20%);
-opacity: 0.8;
 padding-right: 10px;
 padding-left: 10px;
 
+}
+.user-form h2 {
+ margin: 0;
 }
 .form-group{
   
@@ -135,11 +134,11 @@ padding-left: 10px;
   }
 .profile{
 backdrop-filter: invert(15%);
-opacity: 0.75;
-margin: 10%;
+
+margin: 5%;
 margin-left: 35%;
 color: #e2e7e9;
-max-width: 20%;
+max-width: 23%;
 padding: 2%;
 margin-left: 35%;
 border-radius: 5px;
@@ -152,12 +151,12 @@ border-radius: 5px;
   backdrop-filter: invert(15%);
 
   margin: 20px;
-  width: 300px;
+  width: 330px;
   height: auto;
 
   color: rgb(243, 247, 247);
   border-radius: 5px;
-  border: 3px solid rgb(80, 79, 79);
+  border: 3px solid rgb(192, 187, 187);
 }
 
 .card h2 {
@@ -234,11 +233,15 @@ footer a{
 #skill-list{
   display: flex;
   flex-direction: row;
-  margin: 0;
+ 
+}
+
+#skill-list p{
+  margin: 3px;
 }
 .btn-del{
   width: auto;
   height: fit-content;
-  margin-top: 15px;
-  margin-left: 10%;
+  margin-top: px;
+  margin-left: 3%;
 }

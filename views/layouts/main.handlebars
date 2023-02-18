@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Expertise</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -15,21 +15,18 @@
     </Header>
     
     <nav>
-        {{!-- <a href="/" class="dashboard-btn">Home</a> --}}
+         <a href="/" >Home</a> 
         {{!-- <a href="/search/:skill_id">Skill Search</a> --}}
       {{#if logged_in}}
-        {{#if is_employer }}
-             <a href="/" class="dashboard-btn">Home</a>
-              <a href="/experts" >Experts</a>       
+         {{#if is_employer }}
+            <a href="/experts" >Experts</a>       
              <a href="/search" id="search_link_id" >Search</a>
              <button class="no-button" id="logout">Logout</button> 
           {{else}}
-            <a href="/" class="dashboard-btn">Home</a>
              <a href="/experts" >Experts</a>
-       
             <a href="/profile" id="profile_link_id">Profile</a>
             <button class="no-button" id="logout">Logout</button>        
-        {{/if}}
+       {{/if}}
       {{else}}
       <a href="/experts" >Experts</a>    
         <a href="/login">Login</a>
