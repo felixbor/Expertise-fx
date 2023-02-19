@@ -2,12 +2,12 @@
 
 <div class="search-box">
   <form id="form">
-    <label id="label"> Select a field of expretise you need employee for </label>
+    <label id="label"> Select a field of expretise you need  an employee for </label>
     <div class="search">
       <div class="project">
         <select class="skill-id" type="number
         " id="skill-name" >
-                  <option placeholder="select"></option>
+                  <option placeholder="select">Select</option>
                   {{#each allSkills as |skill|}}
                     <option value="{{skill.id}}" {{#if  (isEqual selected_skill_id skill.id)}} selected {{/if}}>{{skill.skill_name}}</option>
                     {{/each}}
@@ -40,7 +40,12 @@
       </div>
       <button class="search" type="submit">Search</button>
       
-        
+  
+    </div>
+    <div>
+      {{#if SkillName}}
+      <h2 id="SetSkillName">See candidates with  {{SkillName.skill_name}} skill</h2>
+      {{/if}}
     </div>
   </form>
 </div>

@@ -245,3 +245,8 @@ footer a{
   margin-top: px;
   margin-left: 3%;
 }
+
+#SetSkillName{
+  color: aliceblue;
+  font-size: 2.2em;
+}
