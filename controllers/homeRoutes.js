@@ -1,4 +1,6 @@
 const router = require('express').Router();
+const { Sequelize } = require('sequelize');
+const sequelize = require('../config/connection');
 const { Skill, User, UserSkill,Role } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -95,12 +97,14 @@ router.get('/login', async (req, res) => {
 
 router.get('/experts',  async (req, res) => {
   try {
-
+    
     const expertsData = await User.findAll({
-      attributes: ["first_name", "last_name"],
-      include: [
-        { model: Skill }, {model: UserSkill , where: { level : "Expert"}   },
-      ]
+      include:[{
+        model:Skill, 
+        include:[{
+          model: UserSkill, where: {level:"Expert"}
+        }]
+      }], 
     });
 
     const experts = expertsData.map((expert) => expert.get({plain:true}));
