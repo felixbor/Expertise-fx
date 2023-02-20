@@ -96,20 +96,12 @@ router.get('/login', async (req, res) => {
 });
 
 router.get('/experts',  async (req, res) => {
-  try {/*
+  try {
     const expertsData = await User.findAll({
       attributes: ["first_name", "last_name"],
       include: [
         { model: Skill }, {model: UserSkill , where: { level : "Expert"}   },
       ]
-    });*/
-    const expertsData = await User.findAll({
-      include:[{
-        model:Skill, 
-        include:[{
-          model: UserSkill, where: {level:"Expert"}
-        }]
-      }], 
     });
 
     const experts = expertsData.map((expert) => expert.get({plain:true}));
