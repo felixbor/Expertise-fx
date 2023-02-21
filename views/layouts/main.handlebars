@@ -2,50 +2,49 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expertise</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expertise</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
-   <Header>
-        <img src="/pictures/logo-white.png" alt="logo">
-        <p>Find Your Perfect Expert</p>
-    </Header>
-    
-    <nav>
-         <a href="/" >Home</a> 
-        {{!-- <a href="/search/:skill_id">Skill Search</a> --}}
-      {{#if logged_in}}
-         {{#if is_employer }}
-            <a href="/experts" >Experts</a>       
-             <a href="/search" id="search_link_id" >Search</a>
-             <button class="no-button" id="logout">Logout</button> 
-          {{else}}
-             <a href="/experts" >Experts</a>
-            <a href="/profile" id="profile_link_id">Profile</a>
-            <button class="no-button" id="logout">Logout</button>        
-       {{/if}}
-      {{else}}
-      <a href="/experts" >Experts</a>    
-        <a href="/login">Login</a>
-      {{/if}}
-    </nav>
- 
-    <main >
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-        Contact us 
-      <section>
-        <a href="" >Felixbor</a>
-        <a href=" ">JarretButtler</a>
-        <a href="/" >Shaima</a>
-      </section>
-     </footer>
-   
+  <Header>
+    <img src="/pictures/logo-white.png" alt="logo">
+    <p>Find Your Perfect Expert</p>
+  </Header>
+
+  <nav>
+    <a href="/">Home</a>
+    {{#if logged_in}}
+    {{#if is_employer }}
+    <a href="/experts">Experts</a>
+    <a href="/search" id="search_link_id">Search</a>
+    <button class="no-button" id="logout">Logout</button>
+    {{else}}
+    <a href="/experts">Experts</a>
+    <a href="/profile" id="profile_link_id">Profile</a>
+    <button class="no-button" id="logout">Logout</button>
+    {{/if}}
+    {{else}}
+    <a href="/experts">Experts</a>
+    <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+
+  <main>
+    <!-- Render the sub layout -->
+    {{{ body }}}
+  </main>
+  <footer>
+    Contact us
+    <section>
+      <a href="https://github.com/felixbor" target="_blank">Felixbor</a>
+      <a href="https://github.com/jarrettbutler" target="_blank">JarretButtler</a>
+      <a href="https://github.com/shaimaaGhamry" target="_blank">Shaima</a>
+    </section>
+  </footer>
   </div>
 
   <!-- Render script for logged in users only -->
