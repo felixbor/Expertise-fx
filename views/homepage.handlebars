@@ -1,37 +1,31 @@
 <div class="introimg"><img src="" alt="image" id="im3">
   <div class="intro">
+    <h1>OUR MISSION</h1>
     <p> If you are looking for coding professionals you are in the right place.<br> Our mission is to help
       project
       managers to find their team, <br>experts in a certain field.
       Explore our website and<a href="/experts"> find perfect fit.</a> <br>
-       To search experts by skills sigh-Up as  "Employer"<br>
-       To add you card to our data base, please signup and add your skills
     </p>
   </div>
-
   <img src="" alt="image" id="im2">
 </div>
-</div>
-<div id="chart">
-  <canvas id="myChart"> chart</canvas>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <script>
-    const ctx = document.getElementById('myChart');
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Front End', 'Back End', 'FullStack',],
-        datasets: [{
-          label: 'Destribution  of experts in our Database',
-          data: [{{frontEndCount}}, {{backEndCount}},{{fullStackCount}}],
-
-          borderWidth: 1
-
+<div id="join">
+  <div id="chart">
+    <canvas id="myChart"> chart</canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const ctx = document.getElementById('myChart');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Front End', 'Back End', 'FullStack',],
+          datasets: [{
+            label: 'Destribution  of experts in our Database',
+            data: [{{ frontEndCount }}, {{ backEndCount }},{{ fullStackCount }}],
+        borderWidth: 1
         }]
       },
-      options: {
+        options: {
         scales: {
           y: {
             beginAtZero: true
@@ -39,6 +33,30 @@
         }
       }
     });
-  </script>
+    </script>
+  </div>
+  <div id="expertjoin">
+    <h2>Join as an Expert</h2>
+    <p>As one of our Experts you can join thousands of other professional coders <br> by creating a profile card for
+      our "Employers" to see. You'll also be able to:</p>
+    <ul id="expertlist">
+      <li>- Add your contact information</li>
+      <li>- Add your specific skills within a language</li>
+      <li>- Dictate the level of expertise in this language</li>
+    </ul>
+  </div>
+</div>
+<div id="employerjoin">
+  <h2>Join as an Employer</h2>
+  <p>When you join as one of our Employers you'll have access to thousands of Experts for your needs <br> As an Employer you'll be able to: </p>
+<ul id="employerlist">
+  <li>- Search Experts by skill</li>
+  <li>- See all Experts who have expert skills</li>
+  <li>- Contact Experts through their profile card</li>
+</ul>
+</div>
+<div id="aboutus">
+  <h2>ABOUT US</h2>
+  <p>In just a few short months we will be graduating from the coding bootcamp and one of the most daunting tasks coming will be finding a job. <br> In order to make this process a little better we wanted to create an app that gives employers a chance to find the right fit for their jobs. <br> Hiring is a hard process for everyone, sometimes the person for the company isn't what they need or the right fit. <br> This allows employers to select the Expert best suited for the task they need. <br> This also allows the process of hiring to be streamlined as not only are people looking for jobs but jobs are looking for people</p>
 </div>
 <script src="./js/script.js"></script>
