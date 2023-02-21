@@ -6,7 +6,9 @@
         <select class="skill-id" type="number" id="skill-name">
           <option placeholder="select">Select Skill</option>
           {{#each allSkills as |skill|}}
-          <option value="{{skill.id}}" {{#if (isEqual selected_skill_id skill.id)}} selected {{/if}}>
+          <option value="{{skill.id}}" {{#if SkillName}} 
+                         {{#if (isEqual SkillName skill.skill_name) }} selected {{/if}}
+                         {{/if}}>
             {{skill.skill_name}}</option>
           {{/each}}
         </select>
