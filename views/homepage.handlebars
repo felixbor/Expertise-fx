@@ -22,17 +22,41 @@
           datasets: [{
             label: 'Destribution  of experts in our Database',
             data: [{{ frontEndCount }}, {{ backEndCount }},{{ fullStackCount }}],
-        borderWidth: 1
-        }]
-      },
+        backgroundColor: [
+        'rgba(30, 145, 255, 1)',
+        'rgba(250, 128, 114, 0.8)',
+        'rgba(139, 0, 0, 1)'
+      ],
+        borderWidth: 2
+            }]
+          },
         options: {
+        plugins: {
+          legend: {
+            labels: {
+              font: {
+                size: 20
+              }
+            }
+          }
+        },
         scales: {
           y: {
-            beginAtZero: true
+            beginAtZero: true,
+            ticks: {
+              font: { size: 30 },
+            }
+          },
+          x: {
+            ticks: {
+              font: {
+                size: 20,
+              }
+            }
           }
         }
       }
-    });
+        });
     </script>
   </div>
   <div id="expertjoin">
@@ -48,15 +72,21 @@
 </div>
 <div id="employerjoin">
   <h2>Join as an Employer</h2>
-  <p>When you join as one of our Employers you'll have access to thousands of Experts for your needs <br> As an Employer you'll be able to: </p>
-<ul id="employerlist">
-  <li>- Search Experts by skill</li>
-  <li>- See all Experts who have expert skills</li>
-  <li>- Contact Experts through their profile card</li>
-</ul>
+  <p>When you join as one of our Employers you'll have access to thousands of Experts for your needs <br> As an Employer
+    you'll be able to: </p>
+  <ul id="employerlist">
+    <li>- Search Experts by skill</li>
+    <li>- See all Experts who have expert skills</li>
+    <li>- Contact Experts through their profile card</li>
+  </ul>
 </div>
 <div id="aboutus">
   <h2>ABOUT US</h2>
-  <p>In just a few short months we will be graduating from the coding bootcamp and one of the most daunting tasks coming will be finding a job. <br> In order to make this process a little better we wanted to create an app that gives employers a chance to find the right fit for their jobs. <br> Hiring is a hard process for everyone, sometimes the person for the company isn't what they need or the right fit. <br> This allows employers to select the Expert best suited for the task they need. <br> This also allows the process of hiring to be streamlined as not only are people looking for jobs but jobs are looking for people</p>
+  <p>In just a few short months we will be graduating from the coding bootcamp and one of the most daunting tasks coming
+    will be finding a job. <br> In order to make this process a little better we wanted to create an app that gives
+    employers a chance to find the right fit for their jobs. <br> Hiring is a hard process for everyone, sometimes the
+    person for the company isn't what they need or the right fit. <br> This allows employers to select the Expert best
+    suited for the task they need. <br> This also allows the process of hiring to be streamlined as not only are people
+    looking for jobs but jobs are looking for people</p>
 </div>
 <script src="./js/script.js"></script>

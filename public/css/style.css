@@ -56,10 +56,6 @@ nav a {
   padding-top: 1%;
 }
 
-hr {
-  color: aliceblue;
-}
-
 #join {
   display: flex;
   justify-content: space-between;
@@ -104,7 +100,6 @@ hr {
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
-
 }
 
 .login-signup {
@@ -155,14 +150,27 @@ hr {
   font-size: 2em;
 }
 
+#profile_container{
+  display: flex;
+  flex-direction: row;
+}
+
 .profile {
+  flex: 3;
   backdrop-filter: invert(15%);
   margin: 5%;
-  margin-left: 35%;
   color: #e2e7e9;
-  max-width: 23%;
   padding: 2%;
-  margin-left: 35%;
+  border-radius: 5px;
+  border: 3px solid rgb(80, 79, 79);
+}
+
+.user-form{
+  flex: 1;
+  backdrop-filter: invert(15%);
+  margin: 5%;
+  color: #e2e7e9;
+  padding: 2%;
   border-radius: 5px;
   border: 3px solid rgb(80, 79, 79);
 }
@@ -209,9 +217,8 @@ a:hover {
 }
 
 .intro {
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
-  font-size: 2em;
   padding-top: 2%;
   color: aliceblue;
 }
