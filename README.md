@@ -1,4 +1,4 @@
-# developer-tracker
+# Expertise
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
         
@@ -77,13 +77,19 @@ https://github.com/jarrettbutler/Expertise
 
 ## Contact
 Jarrett Butler
+
 jbutler98@hotmail.com
+
 https://github.com/jarrettbutler
 
 Feliks Borshchevskyi
+
 Felixbor@gmail.com
+
 https://github.com/felixbor
 
 Shaimaa Ghamry
+
+
 
 https://github.com/shaimaaGhamry
