@@ -19,11 +19,11 @@ If you are looking for coding professionals you are in the right place. We desig
 ## Installation
 Clone the repo here, run "npm install if no packages are installed",run "node seeds/index.js, run "nodemon server.js";
 
-https://github.com/jarrettbutler/Expertise
+https://github.com/felixbor/Expertise-fx
 
 or run click the link below to view the deployed app:
 
-https://expertise-app.herokuapp.com/
+https://expertise-fx.herokuapp.com/
 
 ## Usage
 In this app there are two different usages:
