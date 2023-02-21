@@ -1,42 +1,50 @@
-<div class="profile">
+<div id="profile_container">
   <div class="user-form">
-    <h2>Welcome, {{user.first_name}}!</h2>
-    <div>
-      <h3>Your existing skills</h3>
-      <div class="try">
-        {{#each user.Skills as |userSk|}}
-        <form id="skill-list">
-          <p> {{userSk.skill_name}} -Level: {{userSk.UserSkill.level}} </p>
-          <button class=" btn-del" data-id="{{userSk.UserSkill.skill_id}}">DELETE</button>
-        </form>
-        {{/each}}
+    <h2>Add a new skill:</h2>
+    <form class="form  new-skill-form">
+      
+      
+      <div class="form-group">
+        <h2>Welcome, {{user.first_name}}!</h2>
+        <br>
+        <label for="skill-name">skill name:</label>
+        <select class="form-input" type="number" id="skill-name">
+          <option placeholder="select"></option>
+          {{#each allSkills as |skill|}}
+          <option value="{{skill.id}}">{{skill.skill_name}}</option>
+          {{/each}}
+        </select>
       </div>
-    </div>
-    
-    <div>
-      <div class="user-form">
-        <h2>Add a new skill:</h2>
-        <form class="form  new-skill-form">
-          <div class="form-group">
-            <label for="skill-name">skill name:</label>
-            <select class="form-input" type="number" id="skill-name">
-              <option placeholder="select"></option>
-              {{#each allSkills as |skill|}}
-              <option value="{{skill.id}}">{{skill.skill_name}}</option>
-              {{/each}}
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="skill-level">level of skill :</label>
-            <select class="form-input" type="text" id="skill-level">
-              <option placeholder="select"></option>
-              <option value="Expert">Expert</option>
-              <option value="Intermediate ">Intermediate </option>
-              <option value="Beginner">Beginner</option>
-            </select>
-            <div class="form-group">
-              <button type="submit" class="btn ">Add skill</button>
-            </div>
-        </form>
+      <div class="form-group">
+        <label for="skill-level">level of skill :</label>
+        <select class="form-input" type="text" id="skill-level">
+          <option placeholder="select"></option>
+          <option value="Expert">Expert</option>
+          <option value="Intermediate ">Intermediate </option>
+          <option value="Beginner">Beginner</option>
+        </select>
       </div>
-      <script src="/js/profile.js"></script>
+      <div class="form-group">
+        <button type="submit" class="btn ">Add skill</button>
+      </div>
+    </form>
+  </div>
+  <div class="profile">
+      
+        <h2>Your existing skills</h2>
+        <div class="try">
+          <ul>
+          {{#each user.Skills as |userSk|}}
+          <form id="skill-list">
+            <li> {{userSk.skill_name}}  - Level: {{userSk.UserSkill.level}} </li>
+            <button class=" btn-del" data-id="{{userSk.UserSkill.skill_id}}">DELETE</button>
+          </form>
+          {{/each}}
+          </ul>
+        </div>
+      
+      
+  </div>
+     
+</div>    
+<script src="/js/profile.js"></script>
