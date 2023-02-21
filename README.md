@@ -43,7 +43,9 @@ Employers;
 
 ## Credits
 Shaima Ghamry - https://github.com/shaimaaGhamry
+
 Jarrett Butler - https://github.com/jarrettbutler
+
 Feliks Borshchevskyi - https://github.com/felixbor
 
 As well we used some of the module 14 mini project code as satrter code (Only really used the signup, login and logout code)
