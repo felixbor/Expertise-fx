@@ -1,20 +1,17 @@
-
-    <div class="search">
-        <p>Our Experts</p>
-      </div>
-     <div class="container">
- {{#each experts as |expert|}}
-  
-        <div class="card">
-            <h2>{{expert.first_name}} {{expert.last_name}} </h2>
-           
-           <ul> 
-               {{#each expert.Skills as |expertSk|}}
-                <li> {{expertSk.skill_name}}  </li>
-                {{/each}} 
-            </ul>
-        </div>
-
-   
-{{/each}}   
-     </div>
+<div class="search">
+    <p>OUR EXPERTS:</p>
+</div>
+<div class="container">
+    {{#each experts as |expert|}}
+    <div class="card">
+        <h2>{{expert.first_name}} {{expert.last_name}} </h2>
+        <ul>
+            {{#each expert.Skills as |expertSk|}}
+            {{#if (isEqual expertSk.UserSkill.level "Expert" )}}
+            <li> {{expertSk.skill_name}}: {{expertSk.UserSkill.level}} </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+    {{/each}}
+</div>

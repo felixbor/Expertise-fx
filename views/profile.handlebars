@@ -1,9 +1,8 @@
 <div class="profile">
-
   <div class="user-form">
     <h2>Welcome, {{user.first_name}}!</h2>
     <div>
-      <p>Your existing skills</p>
+      <h3>Your existing skills</h3>
       <div class="try">
         {{#each user.Skills as |userSk|}}
         <form id="skill-list">
@@ -12,42 +11,20 @@
         </form>
         {{/each}}
       </div>
-
-
     </div>
-
-
-    <div class=" ">
+    
+    <div>
       <div class="user-form">
-        <h3>Add a new skill:</h3>
-
+        <h2>Add a new skill:</h2>
         <form class="form  new-skill-form">
           <div class="form-group">
             <label for="skill-name">skill name:</label>
             <select class="form-input" type="number" id="skill-name">
               <option placeholder="select"></option>
-              <option value="1">HTML</option>
-              <option value="2 ">CSS </option>
-              <option value="3">JAVA SCRIPT</option>
-              <option value="4">ActiveVFP </option>
-              <option value="5">ASP</option>
-              <option value="6">ASP.NET</option>
-              <option value="7">.NET</option>
-              <option value="8">Java </option>
-              <option value="9">Angular </option>
-              <option value="10">C++ </option>
-              <option value="11">AmazonAWS </option>
-              <option value="12">SQL </option>
-              <option value="13">R </option>
-              <option value="14">React </option>
-              <option value="15">Python </option>
-              <option value="16">NodeJS </option>
-              <option value="17">ExpressJS </option>
-              <option value="18">Ruby </option>
-              <option value="19">C# </option>
-              <option value="20">MongoDB </option>
+              {{#each allSkills as |skill|}}
+              <option value="{{skill.id}}">{{skill.skill_name}}</option>
+              {{/each}}
             </select>
-
           </div>
           <div class="form-group">
             <label for="skill-level">level of skill :</label>
@@ -56,11 +33,7 @@
               <option value="Expert">Expert</option>
               <option value="Intermediate ">Intermediate </option>
               <option value="Beginner">Beginner</option>
-
-
-
             </select>
-
             <div class="form-group">
               <button type="submit" class="btn ">Add skill</button>
             </div>
